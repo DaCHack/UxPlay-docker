@@ -1,0 +1,10 @@
+services:
+  openvpn:
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - '/home/administrator/containers/openvpn:/etc/openvpn'  
+    devices:
+      - '/dev/net/tun:/dev/net/tun'
+    capabilities:
+      add: ["NET_ADMIN"]
