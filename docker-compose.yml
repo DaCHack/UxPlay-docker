@@ -6,5 +6,6 @@ services:
       - '/home/administrator/containers/openvpn:/etc/openvpn'  
     devices:
       - '/dev/net/tun:/dev/net/tun'
-    capabilities:
-      add: ["NET_ADMIN"]
+    securityContext:
+      capabilities:
+        add: ["NET_ADMIN"]
