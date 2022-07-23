@@ -45,4 +45,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/simplewhale:latest set of commands using the runners shell
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/openvpn-docker:latest
