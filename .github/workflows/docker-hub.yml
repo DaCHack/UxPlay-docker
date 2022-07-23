@@ -46,3 +46,10 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/openvpn:latest
+      -
+        name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v2
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          DOCKERHUB_REPOSITORY:  ${{ secrets.DOCKER_HUB_USERNAME }}/openvpn
