@@ -1,11 +1,17 @@
-services:
   openvpn:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: dachack/openvpn
+    container_name: "openvpn" # choose any name you like
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    restart: unless-stopped # always restart in case of issues or system reboot
+    network_mode: "host" # as far as I read OpenVPN requires host network 
+    ports:
+      - 1194:1194/udp
     volumes:
-      - '/home/administrator/containers/openvpn:/etc/openvpn'  
+      - '/root/containers/openvpn:/etc/openvpn' # use your existing config here or create a new one based on OpenVPN config reference
+      - '/root/containers/openvpn/etc/passwd:/etc/passwd' # if using PAM auth simply use the users on the host for VPN login by linking/copying passwd and shadow files or create custom files based on the Alpine template
+      - '/root/containers/openvpn/etc/shadow:/etc/shadow' # see above
     devices:
-      - '/dev/net/tun:/dev/net/tun'
+      - '/dev/net/tun:/dev/net/tun' # Give permission to use the tunnel device of the host
     cap_add:
-      - NET_ADMIN
+      - NET_ADMIN # as far as I read OpenVPN requires the capability
