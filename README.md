@@ -20,5 +20,4 @@ https://github.com/DaCHack/uxplay-docker
     network_mode: "host"
     devices:
       - '/dev/fb0:/dev/fb0'
-      - '/dev/fb1:/dev/fb1'
 ```
