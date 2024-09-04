@@ -24,9 +24,10 @@ services:
     network_mode: "host"
     devices:
       - '/dev/fb0:/dev/fb0'
+      - '/dev/dri:/dev/dri'
     volumes:
-      - /var/run/dbus:/var/run/dbus
-      - /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket
-      - /run:/run
-    command: 'uxplay -n Homeserver -nh -s 1280x1024 -nohold -vs "fbdevsink device=/dev/fb1" -as "alsasink device=plughw:1,0"'  # Command can be tailored based on uxplay documentation
+      - '/var/run/dbus:/var/run/dbus'
+      - '/var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket'
+      - '/run:/run'
+    command: 'uxplay -n Homeserver -nh -s 1280x1024 -nohold -vs "fbdevsink device=/dev/fb0" -as "alsasink device=plughw:1,0"'  # Command can be tailored based on uxplay documentation
 ```
