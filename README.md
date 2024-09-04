@@ -27,6 +27,7 @@ services:
     devices:
       - '/dev/fb0:/dev/fb0'
       - '/dev/dri:/dev/dri'
+      - '/dev/snd:/dev/snd'
     volumes:
       - '/var/run/dbus:/var/run/dbus'
       - '/var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket'
