@@ -9,6 +9,9 @@ https://hub.docker.com/r/dachack/uxplay
 ## Sources in Github
 https://github.com/DaCHack/uxplay-docker
 
+## Host Requirements
+- Avahi daemon installed on host
+
 ## Docker-compose
 ```
 services:
