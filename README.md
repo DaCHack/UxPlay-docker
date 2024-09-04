@@ -11,6 +11,7 @@ https://github.com/DaCHack/uxplay-docker
 
 ## Docker-compose
 ```
+services:
   uxplay:
     image: dachack/uxplay
     container_name: "uxplay" # choose any name you like
@@ -20,4 +21,8 @@ https://github.com/DaCHack/uxplay-docker
     network_mode: "host"
     devices:
       - '/dev/fb0:/dev/fb0'
+    volumes:
+      - /var/run/dbus:/var/run/dbus
+      - /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket
+      - /run:/run
 ```
