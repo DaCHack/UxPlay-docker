@@ -34,5 +34,5 @@ services:
       - '/var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket'
       - '/run:/run'
     # Tailor command based on UxPlay documentation
-    command: 'uxplay -n Homeserver -nh -s 1280x1024 -dacp -nohold -vs "fbdevsink device=/dev/fb0" -as "alsasink device=plughw:1,0"'
+    command: 'uxplay -n Homeserver -nh -s 1920x1080 -dacp -nohold -vs "fbdevsink device=/dev/fb0" -as "alsasink device=plughw:1,3"'
 ```
