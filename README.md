@@ -20,6 +20,7 @@ Edit your grub confing and do not forget `update-grub`:
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="drm_kms_helper.edid_firmware=edid/lgtv_c4.bin video=HDMI-A-2:1920x1080@60e quiet"
 ```
+Make sure to adapt the resolution to your monitor in this line as well as in the docker-compose below.
 
 ## Docker-compose
 ```
