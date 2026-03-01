@@ -14,6 +14,13 @@ https://github.com/DaCHack/uxplay-docker
 ## Host Requirements
 - Avahi daemon installed on host
 
+## When using with a TV or Set-top box UxPlay does not show full resolution?
+You can force the right resolution also in case the HDMI connection is established only after boot (e.g. when using and rebooting the homeserver while the TV is off).
+Edit your grub confing and do not forget `update-grub`:
+```
+GRUB_CMDLINE_LINUX_DEFAULT="drm_kms_helper.edid_firmware=edid/lgtv_c4.bin video=HDMI-A-2:1920x1080@60e quiet"
+```
+
 ## Docker-compose
 ```
 services:
