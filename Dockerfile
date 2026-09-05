@@ -2,11 +2,11 @@ FROM debian:testing-slim
 
 ENV DEBIAN_FRONTEND="noninteractive" TZ=Europe/UTC    
 
-RUN apt-get update -yy && \
-    apt-get install -yy libssl-dev libplist-dev && \
-    apt-get install -yy libavahi-compat-libdnssd-dev && \
-    apt-get install -yy libgstreamer1.0 libgstreamer-plugins-base1.0 gstreamer1.0-libav gstreamer1.0-plugins-bad gstreamer1.0-plugins-good gstreamer1.0-alsa && \
-    apt-get install -yy uxplay && \
+RUN apt-get update -y && \
+    apt-get install -y libssl-dev libplist-dev && \
+    apt-get install -y libavahi-compat-libdnssd-dev && \
+    apt-get install -y libgstreamer1.0 libgstreamer-plugins-base1.0 gstreamer1.0-libav gstreamer1.0-plugins-bad gstreamer1.0-plugins-good gstreamer1.0-alsa && \
+    apt-get install -y uxplay && \
     rm -rf /var/lib/apt/lists/*
 
 # hardware-accelerated Intel graphics, but not NVIDIA
